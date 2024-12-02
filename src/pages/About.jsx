@@ -1,186 +1,151 @@
-import { FaRegBuilding } from "react-icons/fa6";
-import { FiHome } from "react-icons/fi";
-import { RiSofaLine } from "react-icons/ri";
-import { LiaCogSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
+import HeadImg from "../assets/projects/hero.svg";
+import Client from "../components/Client";
 
-const About = () => {
+const AboutPage = () => {
   return (
-    <div className="container mx-auto px-6 py-16">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6 rounded-xl shadow-lg">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage: "url('https://via.placeholder.com/1500x800')",
-          }}
-        ></div>
-        <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-bold mb-6">About Us</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            We are a leading company providing comprehensive services in
-            construction, 3D design, interior architecture, and custom
-            furniture. Our team is committed to creating innovative,
-            sustainable, and functional spaces for our clients.
+    <div className="py-16 px-6 lg:px-24 mt-20 bg-gray-50">
+
+      {/* Section Header */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">We Build with Passion</h1>
+        <p className="mt-4 text-lg text-gray-700">
+          Kami adalah perusahaan konstruksi yang berdedikasi untuk menciptakan proyek-proyek berkualitas tinggi yang berfokus pada inovasi, keberlanjutan, dan kepuasan pelanggan.
+        </p>
+      </div>
+
+      {/* Content Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div>
+          <p className="text-gray-600">
+            Di Elevasi Konstruksi, kami mengutamakan kualitas dalam setiap proyek yang kami tangani. Kami memiliki pengalaman bertahun-tahun dalam membangun rumah, gedung komersial, dan infrastruktur lainnya dengan standar tertinggi.
+          </p>
+        </div>
+        <div>
+          <p className="text-gray-600">
+            Kami percaya bahwa setiap proyek adalah kesempatan untuk mewujudkan impian klien kami. Tim ahli kami bekerja dengan teknologi terbaru dan praktik konstruksi terbaik untuk menghasilkan hasil yang tahan lama dan estetis.
+          </p>
+          <p className="mt-4 text-gray-600">
+            Dari desain awal hingga penyelesaian akhir, kami memastikan setiap tahap pekerjaan dilakukan dengan cermat dan tepat waktu. Komitmen kami terhadap keberlanjutan membuat kami selalu mempertimbangkan solusi ramah lingkungan dalam setiap langkah pembangunan.
+          </p>
+        </div>
+        <div>
+          <p className="text-gray-600">
+            Kami bangga dengan tim kami yang terampil dan berdedikasi. Setiap anggota tim kami adalah profesional yang berpengalaman dan ahli di bidangnya, yang memungkinkan kami untuk memberikan hasil yang luar biasa dan solusi konstruksi yang inovatif.
           </p>
         </div>
       </div>
 
-      {/* Vision and Mission Section */}
-      <div className="text-center my-16">
-        <h2 className="text-3xl font-semibold text-primary mb-6">Our Vision</h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-          To be a global leader in construction and design, known for our
-          excellence in quality, innovation, and sustainability, transforming
-          spaces for future generations.
-        </p>
-
-        <h2 className="text-3xl font-semibold text-primary mb-6">
-          Our Mission
-        </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          Our mission is to deliver top-notch construction services while
-          focusing on innovative designs and sustainability. We aim to exceed
-          our clients expectations and create spaces that foster growth,
-          comfort, and creativity.
-        </p>
+      {/* Statistics Section */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mt-16">
+        {[
+          { number: "2005", label: "Tahun Perusahaan Didirikan" },
+          { number: "300+", label: "Proyek yang Diselesaikan" },
+          { number: "500+", label: "Pekerja Ahli" },
+          { number: "Rp 100M+", label: "Nilai Proyek yang Telah Diselesaikan" },
+        ].map((stat, index) => (
+          <div key={index}>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</h2>
+            <p className="text-lg text-gray-700">{stat.label}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Services Section */}
-      <h2 className="text-4xl font-semibold text-center text-primary mb-12">
-        Our Services
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* Service 1: Contractor */}
-        <div className="card bg-gradient-to-r from-slate-700 via-gray-800 to-black hover:scale-105 transition-all duration-300 ease-in-out shadow-xl rounded-xl">
-          <figure>
-            <LiaCogSolid className="w-24 h-24 text-white mx-auto mt-6" />
-          </figure>
-          <div className="card-body text-center text-white">
-            <h3 className="card-title text-2xl font-semibold">Contractor</h3>
-            <p className="text-lg mb-4">
-              Providing full-scale contracting services for residential and
-              commercial projects.
-            </p>
-            <div className="card-actions justify-center mt-4">
-              <button className="btn btn-outline btn-light">Learn More</button>
-            </div>
-          </div>
-        </div>
+      {/* Clients Section */}
+      <Client />
+      {/* Client Section End */}
 
-        {/* Service 2: Design 3D */}
-        <div className="card bg-gradient-to-r from-indigo-600 via-blue-700 to-indigo-800 hover:scale-105 transition-all duration-300 ease-in-out shadow-xl rounded-xl">
-          <figure>
-            <FiHome className="w-24 h-24 text-white mx-auto mt-6" />
-          </figure>
-          <div className="card-body text-center text-white">
-            <h3 className="card-title text-2xl font-semibold">Design 3D</h3>
-            <p className="text-lg mb-4">
-              We provide detailed 3D designs to help visualize your space before
-              construction begins.
-            </p>
-            <div className="card-actions justify-center mt-4">
-              <button className="btn btn-outline btn-light">Learn More</button>
-            </div>
-          </div>
-        </div>
-
-        {/* Service 3: Interior */}
-        <div className="card bg-gradient-to-r from-purple-800 via-indigo-900 to-black hover:scale-105 transition-all duration-300 ease-in-out shadow-xl rounded-xl">
-          <figure>
-            <FaRegBuilding className="w-24 h-24 text-white mx-auto mt-6" />
-          </figure>
-          <div className="card-body text-center text-white">
-            <h3 className="card-title text-2xl font-semibold">
-              Interior Design
-            </h3>
-            <p className="text-lg mb-4">
-              We bring your interior spaces to life with modern, creative, and
-              functional designs.
-            </p>
-            <div className="card-actions justify-center mt-4">
-              <button className="btn btn-outline btn-light">Learn More</button>
-            </div>
-          </div>
-        </div>
-
-        {/* Service 4: Furniture */}
-        <div className="card bg-gradient-to-r from-yellow-700 via-orange-700 to-red-700 hover:scale-105 transition-all duration-300 ease-in-out shadow-xl rounded-xl">
-          <figure>
-            <RiSofaLine className="w-24 h-24 text-white mx-auto mt-6" />
-          </figure>
-          <div className="card-body text-center text-white">
-            <h3 className="card-title text-2xl font-semibold">
-              Furniture Design
-            </h3>
-            <p className="text-lg mb-4">
-              Custom, high-quality furniture designs tailored to your space and
-              needs.
-            </p>
-            <div className="card-actions justify-center mt-4">
-              <button className="btn btn-outline btn-light">Learn More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <div className="my-16 text-center">
-        <h2 className="text-3xl font-semibold text-primary mb-6">
-          What Our Clients Say
-        </h2>
-        <div className="carousel w-full rounded-xl shadow-lg">
-          <div id="testimonial1" className="carousel-item relative w-full">
-            <div className="bg-gray-100 p-8 rounded-lg shadow-md">
-              <p className="text-lg text-gray-700 italic">
-                "The team transformed our office space into something
-                extraordinary! The designs are modern, functional, and
-                inspiring!"
-              </p>
-              <p className="mt-4 font-semibold">John Doe</p>
-              <p className="text-sm text-gray-500">CEO, Example Corp</p>
-            </div>
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#testimonial4" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#testimonial2" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id="testimonial2" className="carousel-item relative w-full">
-            <div className="bg-gray-100 p-8 rounded-lg shadow-md">
-              <p className="text-lg text-gray-700 italic">
-                "Their 3D design service was a game-changer for us. It made our
-                decision-making process so much easier and more confident!"
-              </p>
-              <p className="mt-4 font-semibold">Jane Smith</p>
-              <p className="text-sm text-gray-500">
-                Marketing Manager, XYZ Ltd.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Us Section */}
-      <div className="text-center my-16">
-        <h2 className="text-3xl font-semibold text-primary mb-6">
-          Get in Touch
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-          Ready to start your project? Contact us today, and let's create
-          something amazing together.
-        </p>
-        <a
-          href="mailto:info@yourcompany.com"
-          className="btn btn-primary text-white"
+      {/* About Us Section */}
+      <div className="mx-auto container mt-20">
+        <div
+          className="hero h-80 rounded-3xl shadow-xl overflow-hidden"
+          style={{
+            backgroundImage: `url(${HeadImg})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
         >
-          Contact Us
-        </a>
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-neutral-content text-center">
+            <div className="max-w-4xl">
+              <h1 className="mb-5 sm:text-5xl text-3xl font-sans text-white">
+                Harmony of Nature in Shaping Design for Humanity and Environment
+              </h1>
+              <Link to="/contact">
+                <button className="btn btn-primary text-white rounded-3xl px-10 py-3 shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Values Section Header */}
+      <div className="text-center max-w-3xl mx-auto mb-12 mt-20">
+        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Our Values</h2>
+        <p className="mt-4 text-lg text-gray-600">
+          Kami percaya bahwa keberhasilan perusahaan kami didorong oleh nilai-nilai yang kami pegang teguh. Nilai-nilai ini membentuk setiap aspek dari pekerjaan kami, dari hubungan kami dengan klien hingga cara kami berkolaborasi dalam tim.
+        </p>
+      </div>
+
+      {/* Values Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "🚀",
+            color: "text-blue-500",
+            title: "Excellence in Every Project",
+            description:
+              "Kami selalu berusaha memberikan kualitas terbaik dalam setiap proyek yang kami kerjakan, memastikan bahwa setiap detil diperhatikan dengan seksama.",
+          },
+          {
+            icon: "📘",
+            color: "text-purple-500",
+            title: "Continuous Innovation",
+            description:
+              "Kami selalu mencari cara baru dan lebih baik untuk membangun, menggunakan teknologi terbaru untuk menciptakan solusi konstruksi yang lebih efisien dan efektif.",
+          },
+          {
+            icon: "🖐",
+            color: "text-indigo-500",
+            title: "Integrity and Responsibility",
+            description:
+              "Kami berkomitmen untuk bekerja dengan integritas, selalu transparan dan jujur dalam setiap interaksi dengan klien dan rekan bisnis kami.",
+          },
+          {
+            icon: "✨",
+            color: "text-yellow-500",
+            title: "Sustainability First",
+            description:
+              "Kami mengutamakan keberlanjutan dalam setiap langkah pembangunan, memilih solusi yang ramah lingkungan dan berkelanjutan untuk masa depan yang lebih baik.",
+          },
+          {
+            icon: "🐾",
+            color: "text-pink-500",
+            title: "Teamwork and Collaboration",
+            description:
+              "Kami percaya bahwa kekuatan tim kami adalah kunci keberhasilan kami. Kami bekerja sama dengan klien dan rekan kami untuk mencapai tujuan bersama.",
+          },
+          {
+            icon: "🌟",
+            color: "text-cyan-500",
+            title: "Client Satisfaction",
+            description:
+              "Kami selalu mendengarkan dan mengutamakan kepuasan klien. Setiap proyek adalah peluang untuk mewujudkan visi mereka dan melebihi harapan mereka.",
+          },
+        ].map((value, index) => (
+          <div key={index} className="flex items-start space-x-4 hover:scale-105 transition-all duration-200 ease-in-out">
+            <span className={`${value.color} text-3xl`}>{value.icon}</span>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">{value.title}</h3>
+              <p className="text-gray-600">{value.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default About;
+export default AboutPage;

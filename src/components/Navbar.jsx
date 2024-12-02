@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import { useState, useEffect } from "react";
 import logo from "../assets/projects/lognbg.png"; // Ganti dengan path logo Anda
 
-
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // Track if the user has scrolled past the Hero Section
@@ -69,26 +68,30 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className=" hidden md:flex space-x-8 font-medium items-center justify-center ">
-          <li>
+        <ul className="hidden md:flex space-x-8 font-medium items-center justify-center">
+          <li className="relative group">
             <Link to="/" className="hover:text-slate-400">
               Home
             </Link>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-400 transition-all duration-300 group-hover:w-full"></span>
           </li>
-          <li>
+          <li className="relative group">
             <Link to="/about" className="hover:text-slate-400">
               About
             </Link>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-400 transition-all duration-300 group-hover:w-full"></span>
           </li>
-          <li>
+          <li className="relative group">
             <Link to="/projects" className="hover:text-slate-400">
               Projects
             </Link>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-400 transition-all duration-300 group-hover:w-full"></span>
           </li>
-          <li>
-            <Link to="#" className="hover:text-slate-400">
+          <li className="relative group">
+            <Link to="/contact" className="hover:text-slate-400">
               Contact
             </Link>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-400 transition-all duration-300 group-hover:w-full"></span>
           </li>
         </ul>
 
@@ -129,7 +132,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="text-xl font-bold">
-                Elevasi <span className="text-gray-800">Kontraktor</span>
+                Elevasi Kontraktor
               </div>
               {/* Close Button */}
               <button onClick={toggleMobileMenu} className="focus:outline-none">
@@ -173,9 +176,9 @@ const Navbar = () => {
               >
                 Projects
               </Link>
-              
+
               <Link
-                to="#"
+                to="/contact"
                 className="block hover:text-slate-400"
                 onClick={toggleMobileMenu}
               >
@@ -188,33 +191,15 @@ const Navbar = () => {
           <div>
             <div className="flex space-x-4 mb-6">
               <a
-                href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-slate-400 transition"
-              >
-                <img
-                  src="https://img.icons8.com/ios-filled/50/ffffff/facebook--v1.png"
-                  alt="Facebook"
-                  className="w-5 h-5"
-                />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-slate-400 transition"
+                href="https://www.instagram.com/elevasi.kontraktor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition"
               >
                 <img
                   src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
                   alt="Instagram"
-                  className="w-5 h-5"
-                />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-slate-400 transition"
-              >
-                <img
-                  src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
-                  alt="LinkedIn"
-                  className="w-5 h-5"
+                  className="w-5 h-5 "
                 />
               </a>
             </div>
@@ -222,9 +207,17 @@ const Navbar = () => {
               <p>PT. Sinergi Ruang Hijau</p>
               <p>Jalan Pulolaut No 27</p>
               <p>Bandung, West Java, Indonesia</p>
-              <p>+62 88102 2020 380</p>
+              <p>+62 822-3154-5981</p>
             </div>
-            <button className="mt-6 w-full py-3 bg-green-400 text-gray-900 rounded-lg font-medium hover:bg-green-500">
+            <button
+              className="mt-6 w-full py-3 bg-green-400 text-gray-900 rounded-lg font-medium hover:bg-green-500"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/6282231545981?text=Hi,%20I'm%20interested%20in%20your%20services",
+                  "_blank"
+                )
+              }
+            >
               Whatsapp
             </button>
           </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import HeadImg from "../assets/projects/hero.svg";
+import Client from "../components/Client";
 
 const Home = () => {
   return (
@@ -19,10 +20,10 @@ const Home = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-4xl">
-              <h1 className="mb-5 text-5xl font-thin font-sans">
+              <h1 className="mb-5 text-5xl font-thin font-sans text-white">
                 Harmony of Nature in Shaping Design for Humanity and Environment
               </h1>
-              <p className="mb-5">#Elevasiaja</p>
+              <p className="mb-5 text-white">#Elevasiaja</p>
               <Link to="/projects">
                 <button className="btn btn-outline text-white rounded-3xl px-10">
                   Last Project{" "}
@@ -66,8 +67,11 @@ const Home = () => {
         </div>
         {/* About Us Section End */}
 
-        {/* Services Section */}
+        {/* Clients Section */}
+        <Client />
+        {/* Clients Section End */}
 
+        {/* Services Section */}
         <Services />
         {/* Services Section End */}
       </>
