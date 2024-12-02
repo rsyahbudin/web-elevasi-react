@@ -7,6 +7,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [sortOrder, setSortOrder] = useState("Newest");
+  const [searchTerm, setSearchTerm] = useState(""); // State baru untuk pencarian
 
   // Muat data proyek secara asinkron
   useEffect(() => {
@@ -17,12 +18,24 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
-  // Filter projects berdasarkan kategori
-  const filteredProjects = projects.filter(
-    (project) =>
+  // Filter projects berdasarkan kategori dan pencarian
+  const filteredProjects = projects.filter((project) => {
+    const matchesCategory =
       selectedCategories.length === 0 ||
-      selectedCategories.includes(project.category)
-  );
+      selectedCategories.includes(project.category);
+
+    const matchesSearch =
+      project.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false ||
+      project.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false ||
+      project.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false ||
+      project.client?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false;
+
+    return matchesCategory && matchesSearch;
+  });
 
   // Urutkan projects berdasarkan tahun
   const sortedProjects = filteredProjects.sort((a, b) => {
@@ -41,6 +54,26 @@ const Projects = () => {
         exceptional craftsmanship and innovative solutions for every project we
         undertake. Explore our portfolio to see how we bring ideas to life.
       </p>
+
+      {/* Search Bar */}
+      <div className="flex justify-between items-center mb-6">
+        <input
+          type="text"
+          className="input input-bordered w-full md:w-1/4"
+          placeholder="Search projects"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <select
+          className="select select-bordered ml-4"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
+          <option>Newest</option>
+          <option>Oldest</option>
+        </select>
+      </div>
+
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
         <Filter
@@ -50,20 +83,16 @@ const Projects = () => {
 
         {/* Main Content */}
         <div className="flex-1">
-          <div className="flex justify-end mb-4">
-            <select
-              className="select select-bordered"
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value)}
-            >
-              <option>Newest</option>
-              <option>Oldest</option>
-            </select>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {sortedProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            {sortedProjects.length > 0 ? (
+              sortedProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))
+            ) : (
+              <p className="text-gray-500 text-center col-span-full">
+                No projects found matching your search criteria.
+              </p>
+            )}
           </div>
         </div>
       </div>

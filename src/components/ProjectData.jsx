@@ -16,12 +16,12 @@ const projectsData = async () => {
       id: 1,
       title: "Modern House",
       category: "Architecture",
-      image: loadedImages["../assets/projects/modernhouse.jpg"], // Gambar utama
+      image: loadedImages["../assets/projects/modernhouse.jpg"],
       year: 2022,
       location: "New York, USA",
-      client: "John Doe Architects", // Ditambahkan client
+      client: "John Doe Architects",
       gallery: [
-        loadedImages["../assets/projects/modernhouse.jpg"], // Galeri
+        loadedImages["../assets/projects/modernhouse.jpg"],
         loadedImages["../assets/projects/kitchen.avif"],
       ],
     },
@@ -32,7 +32,7 @@ const projectsData = async () => {
       image: loadedImages["../assets/projects/kitchen.avif"],
       year: 2024,
       location: "San Francisco, USA",
-      client: "Elite Interior Designs", // Ditambahkan client
+      client: "Elite Interior Designs",
       gallery: [
         loadedImages["../assets/projects/kitchen.avif"],
         loadedImages["../assets/projects/garden.jpg"],
@@ -45,7 +45,7 @@ const projectsData = async () => {
       image: loadedImages["../assets/projects/garden.jpg"],
       year: 2024,
       location: "Los Angeles, USA",
-      client: "Nature Scapes Ltd.", // Ditambahkan client
+      client: "Nature Scapes Ltd.",
       gallery: [
         loadedImages["../assets/projects/garden.jpg"],
         loadedImages["../assets/projects/officebuild.jpg"],
@@ -58,7 +58,7 @@ const projectsData = async () => {
       image: loadedImages["../assets/projects/officebuild.jpg"],
       year: 2025,
       location: "Chicago, USA",
-      client: "Urban Developers Inc.", // Ditambahkan client
+      client: "Urban Developers Inc.",
       gallery: [loadedImages["../assets/projects/officebuild.jpg"]],
     },
   ];
