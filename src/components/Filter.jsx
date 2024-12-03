@@ -1,11 +1,8 @@
 const categories = [
-  "Architecture",
-  "Interior Design",
-  "Garden Design",
-  "Commercial",
-  "Office",
-  "Residential",
-  "Retail",
+  "Contractor",
+  "Design 3D",
+  "Interior",
+  "Furniture",
 ];
 
 const Filter = ({ selectedCategories, setSelectedCategories }) => {

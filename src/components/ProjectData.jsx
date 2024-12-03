@@ -15,7 +15,7 @@ const projectsData = async () => {
     {
       id: 1,
       title: "Modern House",
-      category: "Architecture",
+      category: "Contractor",
       image: loadedImages["../assets/projects/modernhouse.jpg"],
       year: 2022,
       location: "New York, USA",
@@ -28,7 +28,7 @@ const projectsData = async () => {
     {
       id: 2,
       title: "Interior Kitchen",
-      category: "Interior Design",
+      category: "Furniture",
       image: loadedImages["../assets/projects/kitchen.avif"],
       year: 2024,
       location: "San Francisco, USA",
@@ -41,7 +41,7 @@ const projectsData = async () => {
     {
       id: 3,
       title: "Garden Landscape",
-      category: "Garden Design",
+      category: "Interior",
       image: loadedImages["../assets/projects/garden.jpg"],
       year: 2024,
       location: "Los Angeles, USA",
@@ -54,9 +54,9 @@ const projectsData = async () => {
     {
       id: 4,
       title: "Office Building",
-      category: "Commercial",
+      category: "Design 3D",
       image: loadedImages["../assets/projects/officebuild.jpg"],
-      year: 2025,
+      year: 2024,
       location: "Chicago, USA",
       client: "Urban Developers Inc.",
       gallery: [loadedImages["../assets/projects/officebuild.jpg"]],
