@@ -1,8 +1,7 @@
 const categories = [
-  "Contractor",
-  "Design 3D",
-  "Interior",
-  "Furniture",
+  "Architecture Designer",
+  "Interior Designer",
+  "Event Designer",
 ];
 
 const Filter = ({ selectedCategories, setSelectedCategories }) => {

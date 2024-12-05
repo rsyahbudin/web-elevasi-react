@@ -1,5 +1,5 @@
 import { IoArrowForwardCircle } from "react-icons/io5";
-import Image from "../assets/projects/bgabu.jpg";
+import Image from "../assets/projectsold/bgabu.jpg";
 
 const Contact = () => {
   const handleFormSubmit = (e) => {

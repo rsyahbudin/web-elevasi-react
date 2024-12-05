@@ -8,10 +8,13 @@ export default {
       fontFamily: {
         sans: ['Host Grotesk', 'Inter', 'sans-serif'], // Mengubah font default
       },
+      colors: {
+        'netral': '#94765f'
+      }
     },
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["nord"], // Pilih tema monokrom
+    themes: ["autumn"], // Pilih tema monokrom
   },
 };

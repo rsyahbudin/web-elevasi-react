@@ -1,43 +1,49 @@
 import SwiperComponent from "./SwiperComponent";
 
 // Import gambar
-import Manggarai1 from "../assets/projects/manggarai.jpg";
-import Manggarai2 from "../assets/projects/bukitduri.jpg";
-import Manggarai3 from "../assets/projects/KCI_DEPOK.jpg";
-import Bukitduri1 from "../assets/projects/bukitduri.jpg";
-import Bukitduri2 from "../assets/projects/KCI_DEPOK.jpg";
-import Bukitduri3 from "../assets/projects/manggarai.jpg";
-import Depok1 from "../assets/projects/KCI_DEPOK.jpg";
-import Depok2 from "../assets/projects/bukitduri.jpg";
-import Depok3 from "../assets/projects/manggarai.jpg";
+import Mako1 from "../assets/projects/MakoCoffeeShop/1.webp";
+import Mako2 from "../assets/projects/MakoCoffeeShop/2.webp";
+import Mako3 from "../assets/projects/MakoCoffeeShop/3.webp";
+import Mako4 from "../assets/projects/MakoCoffeeShop/4.webp";
+import IsCenter1 from "../assets/projects/IslamicCenter/24.jpg";
+import IsCenter2 from "../assets/projects/IslamicCenter/25.jpg";
+import IsCenter3 from "../assets/projects/IslamicCenter/26.jpg";
+import IsCenter4 from "../assets/projects/IslamicCenter/27.jpg";
+import Cluster1 from "../assets/projects/DesainRumahCluster/drCluster.webp";
+import Cluster2 from "../assets/projects/DesainRumahCluster/drCluster2.webp";
+import Cluster3 from "../assets/projects/DesainRumahCluster/drCluster3.webp";
+import Cluster4 from "../assets/projects/DesainRumahCluster/drCluster4.webp";
 
 const ProjectSection = () => {
   const projectData = [
     {
-      title: "Manggarai Station",
-      location: "Jakarta, Indonesia",
+      title: "Mako Coffee Shop",
+      location: "Jambi",
       images: [
-        { src: Manggarai1, alt: "Manggarai Image 1" },
-        { src: Manggarai2, alt: "Manggarai Image 2" },
-        { src: Manggarai3, alt: "Manggarai Image 3" },
+        { src: Mako1, alt: "Mako Image 1" },
+        { src: Mako2, alt: "Mako Image 2" },
+        { src: Mako3, alt: "Mako Image 3" },
+        { src: Mako4, alt: "Mako Image 4" },
       ],
     },
     {
-      title: "Bukit Duri Station",
-      location: "Padang, Indonesia",
+      title: "Islamic Center",
+      location: "Bekasi",
       images: [
-        { src: Bukitduri1, alt: "Bukit Duri Image 1" },
-        { src: Bukitduri2, alt: "Bukit Duri Image 2" },
-        { src: Bukitduri3, alt: "Bukit Duri Image 3" },
+        { src: IsCenter1, alt: "Bukit Duri Image 1" },
+        { src: IsCenter2, alt: "Bukit Duri Image 2" },
+        { src: IsCenter3, alt: "Bukit Duri Image 3" },
+        { src: IsCenter4, alt: "Bukit Duri Image 3" },
       ],
     },
     {
-      title: "Depok Station",
-      location: "West Java, Indonesia",
+      title: "Rumah Cluster",
+      location: "Cilangkap, Depok",
       images: [
-        { src: Depok1, alt: "Depok Image 1" },
-        { src: Depok2, alt: "Depok Image 2" },
-        { src: Depok3, alt: "Depok Image 3" },
+        { src: Cluster1, alt: "Cluster Image 1" },
+        { src: Cluster2, alt: "Cluster Image 2" },
+        { src: Cluster3, alt: "Cluster Image 3" },
+        { src: Cluster4, alt: "Cluster Image 4" },
       ],
     },
   ];

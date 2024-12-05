@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/projects/logo.png"; // Ganti dengan path logo Anda
+import logo from "../assets/logo elevasi.webp"; // Ganti dengan path logo Anda
 
 const SplashScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -7,7 +7,7 @@ const SplashScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1500); // Simulasi loading selama 3 detik
+    }, 1500); // Simulasi loading selama 1,5 detik
   }, []);
 
   return (

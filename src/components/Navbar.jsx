@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import { useState, useEffect } from "react";
-import logo from "../assets/projects/lognbg.png"; // Ganti dengan path logo Anda
+import logo from "../assets/logo elevasi.webp"; // Ganti dengan path logo Anda
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,14 +41,14 @@ const Navbar = () => {
   // Determine the navbar background color based on the page (Home or not)
   const navbarClass = isHomePage
     ? isScrolled
-      ? "bg-slate-800 shadow-lg text-white" // Scroll past Hero -> bg slate-800
+      ? "bg-netral shadow-lg text-white" // Scroll past Hero -> bg netral
       : "bg-transparent text-white" // Transparent on Home
-    : "bg-slate-800 text-white"; // Slate-800 on other pages
+    : "bg-netral text-white"; // netral on other pages
 
   // Determine the hamburger button color based on the page (Home or not)
   const hamburgerButtonClass = isHomePage
     ? "text-white" // White text on Home page (transparent background)
-    : "bg-slate-800 text-white"; // Slate background on other pages
+    : "bg-netral text-white"; // Slate background on other pages
 
   return (
     <nav
@@ -63,7 +63,7 @@ const Navbar = () => {
             className="w-20 h-16 object-contain" // Sesuaikan ukuran logo
           />
           <div className="text-xl font-bold">
-            <Link to="/">Elevasi Kontraktor</Link> {/* Link ke Home */}
+            <Link to="/">Elevasi Contractor</Link> {/* Link ke Home */}
           </div>
         </div>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
       {/* Modal Menu */}
       <div
         id="mobileMenu"
-        className={`fixed inset-0 bg-gray-900 transform  ${
+        className={`fixed inset-0 bg-netral transform  ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 z-50`}
       >
@@ -132,7 +132,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="text-xl font-bold">
-                Elevasi Kontraktor
+                Elevasi Contractor
               </div>
               {/* Close Button */}
               <button onClick={toggleMobileMenu} className="focus:outline-none">

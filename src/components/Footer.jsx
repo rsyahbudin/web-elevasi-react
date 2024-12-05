@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
 
 const Footer = () => (
-  <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+  <footer className="footer footer-center bg-netral text-white rounded p-10">
     <nav className="grid grid-flow-col gap-4">
       <Link to="/" className="hover:text-slate-400">
         Home

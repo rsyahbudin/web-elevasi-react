@@ -2,7 +2,7 @@ import ProjectSection from "../components/ProjectSection";
 import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import { IoArrowForwardCircle } from "react-icons/io5";
-import HeadImg from "../assets/projects/hero.svg";
+import HeadImg from "../assets/hero/hero.webp";
 import Client from "../components/Client";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
             backgroundImage: `url(${HeadImg})`,
           }}
         >
-          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-overlay bg-opacity-30 bg-black"></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-4xl">
               <h1 className="mb-5 text-5xl font-thin font-sans text-white">
@@ -49,7 +49,7 @@ const Home = () => {
               backgroundImage: `url(${HeadImg})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-overlay bg-opacity-30 bg-black"></div>
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-4xl">
                 <h1 className="mb-5 sm:text-5xl text-3xl font-sans">
