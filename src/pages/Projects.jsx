@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../components/ProjectData";
+import SplashScreen from "../components/SplashScreen"; // Impor komponen SplashScreen
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [sortOrder, setSortOrder] = useState("Newest");
   const [searchTerm, setSearchTerm] = useState(""); // State baru untuk pencarian
+  const [loading, setLoading] = useState(true); // Tambahkan state loading
 
   // Muat data proyek secara asinkron
   useEffect(() => {
     const fetchProjects = async () => {
-      const data = await projectsData();
+      const data = await projectsData(setLoading); // Pass setLoading ke projectsData
       setProjects(data);
     };
     fetchProjects();
@@ -26,13 +28,9 @@ const Projects = () => {
 
     const matchesSearch =
       project.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      false ||
       project.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      false ||
       project.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      false ||
-      project.client?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      false;
+      project.client?.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesCategory && matchesSearch;
   });
@@ -48,6 +46,8 @@ const Projects = () => {
 
   return (
     <div className="container mx-auto p-6 mt-24">
+      {loading && <SplashScreen />} {/* Tampilkan SplashScreen jika loading */}
+
       <h1 className="text-4xl font-bold mb-4">Projects</h1>
       <p className="text-gray-700 mb-6 max-w-4xl">
         At <strong>Elevasi Kontraktor</strong>, we take pride in delivering
