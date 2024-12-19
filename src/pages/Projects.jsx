@@ -12,7 +12,7 @@ const Projects = () => {
 
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -116,11 +116,11 @@ const Projects = () => {
           {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className="mt-8 flex justify-center">
-              <div className="btn-group">
+              <div className="join">
                 {[...Array(totalPages)].map((_, index) => (
                   <button
                     key={index}
-                    className={`btn ${
+                    className={`btn join-item ${
                       currentPage === index + 1 ? "btn-active" : ""
                     }`}
                     onClick={() => handlePageChange(index + 1)}

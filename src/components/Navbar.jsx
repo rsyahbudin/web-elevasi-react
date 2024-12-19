@@ -204,10 +204,10 @@ const Navbar = () => {
               </a>
             </div>
             <div className="text-sm text-white">
-              <p>PT. Sinergi Ruang Hijau</p>
-              <p>Jalan Pulolaut No 27</p>
-              <p>Bandung, West Java, Indonesia</p>
+              <p>PT. Arunika Eunoia Selaras</p>
+              <p>Muhammad Farhan Syahbudin</p>
               <p>+62 822-3154-5981</p>
+              <p>pt.aes99@gmail.com</p>
             </div>
             <button
               className="mt-6 w-full py-3 bg-green-400 text-gray-900 rounded-lg font-medium hover:bg-green-500"

@@ -1,5 +1,5 @@
 import { IoArrowForwardCircle } from "react-icons/io5";
-import Image from "../assets/projectsold/bgabu.jpg";
+import Image from "../assets/hero/hero.webp";
 
 const Contact = () => {
   const handleFormSubmit = (e) => {
@@ -35,13 +35,11 @@ const Contact = () => {
           <p className="mb-4">
             Reach out to us using the contact form or details below.
           </p>
-          <h2 className="text-2xl font-semibold mt-4">Our Office</h2>
-          <p>123 Business St., Suite 456, City, Country</p>
           <h2 className="text-2xl font-semibold mt-4">Contact Details</h2>
           <ul>
-            <li>Email: contact@company.com</li>
+            <li>Email: pt.aes99@gmail.com</li>
             <li>Phone: +62 822-3154-5981</li>
-            <li>Website: www.company.com</li>
+            {/* <li>Website: www.company.com</li> */}
           </ul>
         </div>
       </div>
