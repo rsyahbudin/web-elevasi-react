@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import HeadImg from "../assets/hero/hero.webp";
-import Client from "../components/Client";
 
 const Home = () => {
   return (

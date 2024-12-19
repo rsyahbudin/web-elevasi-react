@@ -8,11 +8,12 @@ const Projects = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [sortOrder, setSortOrder] = useState("Newest");
   const [searchTerm, setSearchTerm] = useState(""); // State baru untuk pencarian
+  const [loading, setLoading] = useState(true); // Tambahkan state loading
 
   // Muat data proyek secara asinkron
   useEffect(() => {
     const fetchProjects = async () => {
-      const data = await projectsData();
+      const data = await projectsData(setLoading); // Pass setLoading ke projectsData
       setProjects(data);
     };
     fetchProjects();
@@ -44,6 +45,8 @@ const Projects = () => {
 
   return (
     <div className="container mx-auto p-6 mt-24">
+      {loading } {/* Tampilkan SplashScreen jika loading */}
+
       <h1 className="text-4xl font-bold mb-4">Projects</h1>
       <p className="text-gray-700 mb-6 max-w-4xl">
         At <strong>Elevasi Kontraktor</strong>, we take pride in delivering

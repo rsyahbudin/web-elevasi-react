@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import HeadImg from "../assets/hero/hero.webp";
-import Client from "../components/Client";
 import Services from "../components/Services";
 
 const AboutPage = () => {
