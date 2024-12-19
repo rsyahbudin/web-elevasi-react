@@ -21,8 +21,6 @@ const AboutPage = () => {
         </p>
       </div>
 
-      {/* Clients Section */}
-      <Client />
 
       {/* About Us Section */}
       <div className="mt-20">

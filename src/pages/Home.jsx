@@ -67,10 +67,6 @@ const Home = () => {
         </div>
         {/* About Us Section End */}
 
-        {/* Clients Section */}
-        <Client />
-        {/* Clients Section End */}
-
         {/* Services Section */}
         <Services />
         {/* Services Section End */}
