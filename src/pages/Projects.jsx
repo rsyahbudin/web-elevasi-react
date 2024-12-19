@@ -7,19 +7,22 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [sortOrder, setSortOrder] = useState("Newest");
-  const [searchTerm, setSearchTerm] = useState(""); // State baru untuk pencarian
-  const [loading, setLoading] = useState(true); // Tambahkan state loading
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  // Muat data proyek secara asinkron
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
+
   useEffect(() => {
     const fetchProjects = async () => {
-      const data = await projectsData(setLoading); // Pass setLoading ke projectsData
+      const data = await projectsData(setLoading);
       setProjects(data);
     };
     fetchProjects();
   }, []);
 
-  // Filter projects berdasarkan kategori dan pencarian
+  // Filter and sort projects
   const filteredProjects = projects.filter((project) => {
     const matchesCategory =
       selectedCategories.length === 0 ||
@@ -34,19 +37,24 @@ const Projects = () => {
     return matchesCategory && matchesSearch;
   });
 
-  // Urutkan projects berdasarkan tahun
   const sortedProjects = filteredProjects.sort((a, b) => {
-    if (sortOrder === "Newest") {
-      return b.year - a.year; // Dari yang terbaru
-    } else {
-      return a.year - b.year; // Dari yang lama
-    }
+    return sortOrder === "Newest" ? b.year - a.year : a.year - b.year;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(sortedProjects.length / itemsPerPage);
+  const paginatedProjects = sortedProjects.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div className="container mx-auto p-6 mt-24">
-      {loading } {/* Tampilkan SplashScreen jika loading */}
-
+      {loading && <div className="text-center">Loading...</div>}
       <h1 className="text-4xl font-bold mb-4">Projects</h1>
       <p className="text-gray-700 mb-6 max-w-4xl">
         At <strong>Elevasi Kontraktor</strong>, we take pride in delivering
@@ -54,7 +62,6 @@ const Projects = () => {
         undertake. Explore our portfolio to see how we bring ideas to life.
       </p>
 
-      {/* Search Bar */}
       <div className="flex justify-between items-center mb-6">
         <label className="input input-bordered flex items-center md:w-1/4">
           <input
@@ -88,17 +95,15 @@ const Projects = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Sidebar */}
         <Filter
           selectedCategories={selectedCategories}
           setSelectedCategories={setSelectedCategories}
         />
 
-        {/* Main Content */}
         <div className="flex-1">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {sortedProjects.length > 0 ? (
-              sortedProjects.map((project) => (
+            {paginatedProjects.length > 0 ? (
+              paginatedProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))
             ) : (
@@ -107,6 +112,25 @@ const Projects = () => {
               </p>
             )}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="mt-8 flex justify-center">
+              <div className="btn-group">
+                {[...Array(totalPages)].map((_, index) => (
+                  <button
+                    key={index}
+                    className={`btn ${
+                      currentPage === index + 1 ? "btn-active" : ""
+                    }`}
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
